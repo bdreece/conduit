@@ -2,7 +2,9 @@ package conduit
 
 import "context"
 
+// A Pipe represents a constructed command pipeline
 type Pipe[Req, Res any] interface {
+    // Execute invokes the command pipeline
     Execute(context.Context, Req) (Res, error)
 }
 
